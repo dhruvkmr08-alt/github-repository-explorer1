@@ -1,159 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>GitHub Repository Explorer</title>
-
+    <title>GitHub Explorer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div>
-            <h1>GitHub Repository Explorer</h1>
-            <p>Search, filter and explore GitHub repositories.</p>
-        </div>
+    <h1>GitHub Explorer</h1>
 
-        <button id="themeButton" class="theme-button">
-            🌙 Dark Mode
-        </button>
-    </header>
+    <div class="search-box">
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search repositories..."
+        >
 
+        <button id="searchButton">Search</button>
+    </div>
 
-    <main class="container">
+    <div class="controls">
 
-        <!-- Search -->
-        <section class="search-section">
+        <select id="languageFilter">
+            <option value="">All Languages</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C">C</option>
+            <option value="C++">C++</option>
+            <option value="HTML">HTML</option>
+        </select>
 
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="Search repositories..."
-                    autocomplete="off"
-                >
-
-                <button id="searchButton">
-                    Search
-                </button>
-            </div>
-
-            <p id="searchMessage"></p>
-
-        </section>
-
-
-        <!-- Filters -->
-        <section class="controls">
-
-            <div class="control">
-                <label for="languageFilter">Language</label>
-
-                <select id="languageFilter">
-                    <option value="all">All Languages</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="Python">Python</option>
-                    <option value="Java">Java</option>
-                    <option value="C++">C++</option>
-                    <option value="TypeScript">TypeScript</option>
-                    <option value="Go">Go</option>
-                    <option value="Rust">Rust</option>
-                </select>
-            </div>
-
-
-            <div class="control">
-                <label for="sortSelect">Sort by</label>
-
-                <select id="sortSelect">
-                    <option value="stars">Stars</option>
-                    <option value="forks">Forks</option>
-                    <option value="name">Name</option>
-                    <option value="updated">Recently Updated</option>
-                </select>
-            </div>
-
-
-            <button id="favoritesButton" class="secondary-button">
-                ❤️ Favorites
-            </button>
-
-            <button id="compareButton" class="secondary-button">
-                Compare Selected
-            </button>
-
-        </section>
-
-
-        <!-- Loading -->
-        <div id="loading" class="loading hidden">
-            <div class="spinner"></div>
-            <p>Searching GitHub...</p>
-        </div>
-
-
-        <!-- Results -->
-        <section id="results" class="results"></section>
-
-
-        <!-- Pagination -->
-        <div id="pagination" class="pagination hidden">
-
-            <button id="previousButton">
-                ← Previous
-            </button>
-
-            <span id="pageNumber">
-                Page 1
-            </span>
-
-            <button id="nextButton">
-                Next →
-            </button>
-
-        </div>
-
-    </main>
-
-
-    <!-- Repository Details Modal -->
-    <div id="detailsModal" class="modal hidden">
-
-        <div class="modal-content">
-
-            <button id="closeModal" class="close-button">
-                ×
-            </button>
-
-            <div id="detailsContent"></div>
-
-        </div>
+        <select id="sortSelect">
+            <option value="stars">Most Stars</option>
+            <option value="forks">Most Forks</option>
+            <option value="name">Name</option>
+        </select>
 
     </div>
 
-
-    <!-- Comparison Modal -->
-    <div id="compareModal" class="modal hidden">
-
-        <div class="modal-content">
-
-            <button id="closeCompareModal" class="close-button">
-                ×
-            </button>
-
-            <h2>Repository Comparison</h2>
-
-            <div id="comparisonContent"></div>
-
-        </div>
-
-    </div>
-
+    <div id="results"></div>
 
     <script src="script.js"></script>
 
 </body>
-    </html>
+</html>
