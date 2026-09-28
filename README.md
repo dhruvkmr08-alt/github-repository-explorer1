@@ -21,6 +21,9 @@ https://dhruvkmr08-alt.github.io/github-repository-explorer1/
 ##Technologies Used
 
 •HTML
+
 •CSS
+
 •JavaScript
+
 •GitHub REST API
