@@ -1,10 +1,11 @@
 body {
+
     font-family: Arial, sans-serif;
     max-width: 1000px;
     margin: auto;
     padding: 30px;
-    background: #f0f4f8;
-    color: #24292f;
+    background: #e8eef5;
+    
 }
 
 h1 {
@@ -55,18 +56,19 @@ select {
 }
 
 .repo-card {
-    background: white;
-    border: 1px solid #ddd;
+    
+    background: #ffffff;
+    border: 1px solid #cbd8e6;
     padding: 20px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    .repo-card {
-    background: white;
-    border: 1px solid #dbe2e8;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+   
+}
+
+.repo-card:hover {
+    background: #f8fbff;
+    border-color: #8fb3d9;
 }
 
 .repo-card h2 {
