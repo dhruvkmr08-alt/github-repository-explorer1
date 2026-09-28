@@ -31,6 +31,10 @@ h1 {
 button {
     padding: 12px 20px;
     cursor: pointer;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
 }
 
 .controls {
@@ -41,6 +45,9 @@ button {
 
 select {
     padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
 }
 
 #results {
@@ -53,6 +60,13 @@ select {
     padding: 20px;
     margin-bottom: 15px;
     border-radius: 8px;
+    .repo-card {
+    background: white;
+    border: 1px solid #dbe2e8;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
 }
 
 .repo-card h2 {
