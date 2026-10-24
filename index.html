@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="github-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M12 .9a11.1 11.1 0 0 0-3.51 21.63c.56.1.76-.24.76-.54v-2.08c-3.1.67-3.76-1.32-3.76-1.32-.5-1.28-1.23-1.62-1.23-1.62-1.01-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 .1.75 2.18 3.1 1.54.1-.72.39-1.21.7-1.49-2.48-.28-5.09-1.24-5.09-5.52 0-1.22.44-2.21 1.15-2.99-.12-.28-.5-1.42.11-2.95 0 0 .94-.3 3.05 1.14a10.6 10.6 0 0 1 5.55 0c2.12-1.44 3.05-1.14 3.05-1.14.61 1.53.23 2.67.12 2.95.71.78 1.14 1.77 1.14 2.99 0 4.29-2.61 5.23-5.1 5.51.4.35.75 1.02.75 2.06v3.06c0 .3.2.65.77.54A11.1 11.1 0 0 0 12 .9Z"/>
+                </svg>
+            </div>
+
+            <p class="eyebrow">GITHUB REPOSITORY EXPLORER</p>
+
+            <h1>
+                Find your next favorite
+                <span>repository.</span>
+            </h1>
+
+            <p class="subtitle">
+                Search GitHub and discover projects, tools, and ideas worth exploring.
+            </p>
+
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                    <path d="m16 16 4.5 4.5"></path>
+                </svg>
+
+                <input
+                    id="searchInput"
+                    type="text"
+                    placeholder="Search repositories..."
+                    aria-label="Search repositories"
+                >
+
+                <button id="searchButton" type="button">
+                    Search <span aria-hidden="true">→</span>
+                </button>
+            </div>
+
+            <div class="controls">
+                <label class="select-wrap">
+                    <span class="sr-only">Filter by language</span>
+
+                    <select id="languageFilter">
+                        <option value="">All Languages</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Python">Python</option>
+                        <option value="Java">Java</option>
+                        <option value="C">C</option>
+                        <option value="C++">C++</option>
+                        <option value="HTML">HTML</option>
+                    </select>
+
+                    <span class="select-chevron" aria-hidden="true">⌄</span>
+                </label>
+
+                <label class="select-wrap">
+                    <span class="sr-only">Sort repositories</span>
+
+                    <select id="sortSelect">
+                        <option value="stars">Sort: Most Stars</option>
+                        <option value="forks">Sort: Most Forks</option>
+                        <option value="name">Sort: Name</option>
+                    </select>
+
+                    <span class="select-chevron" aria-hidden="true">⌄</span>
+                </label>
+            </div>
+        </section>
+
+        <div id="results" aria-live="polite"></div>
+
+        <div class="ambient ambient-one" aria-hidden="true"></div>
+        <div class="ambient ambient-two" aria-hidden="true"></div>
+
+        <div class="bottom-decoration" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="decor-line"></span>
+            <span class="decor-chip"></span>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
