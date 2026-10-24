@@ -10,6 +10,11 @@ let currentPage = 1;
 const repositoriesPerPage = 10;
 
 searchButton.addEventListener("click", searchRepositories);
+searchInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        searchRepositories();
+    }
+});
 
 async function searchRepositories() {
     const searchTerm = searchInput.value.trim();
