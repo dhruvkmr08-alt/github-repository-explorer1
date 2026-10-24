@@ -1,0 +1,477 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    color-scheme: dark;
+    --background: #0b1120;
+    --surface: #111a2c;
+    --surface-hover: #152239;
+    --border: #26354b;
+    --text: #f3f6fb;
+    --muted: #98a6ba;
+    --green: #35d07f;
+    --green-hover: #4be393;
+}
+
+html {
+    min-height: 100%;
+    background: var(--background);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 32%,
+            rgba(27, 62, 69, 0.22),
+            transparent 48%
+        ),
+        var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 100vh;
+    padding: 76px 24px 120px;
+    overflow: hidden;
+}
+
+.hero {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 850px);
+    margin: 0 auto;
+    text-align: center;
+}
+
+.github-mark {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 25px;
+    color: var(--green);
+    background: rgba(53, 208, 127, 0.09);
+    border: 1px solid rgba(53, 208, 127, 0.28);
+    border-radius: 18px;
+    box-shadow: 0 0 36px rgba(53, 208, 127, 0.08);
+}
+
+.github-mark svg {
+    width: 29px;
+    height: 29px;
+}
+
+.eyebrow {
+    margin: 0 0 17px;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+h1 {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--text);
+    font-size: clamp(34px, 5.2vw, 57px);
+    font-weight: 750;
+    letter-spacing: -2px;
+    line-height: 1.12;
+}
+
+h1 span {
+    color: var(--green);
+}
+
+.subtitle {
+    max-width: 570px;
+    margin: 22px auto 35px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: min(100%, 760px);
+    min-height: 68px;
+    margin: 0 auto;
+    padding: 8px 9px 8px 20px;
+    background: rgba(17, 26, 44, 0.94);
+    border: 1px solid #2a3a50;
+    border-radius: 16px;
+    box-shadow:
+        0 16px 45px rgba(0, 0, 0, 0.2),
+        0 0 0 5px rgba(255, 255, 255, 0.012);
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.search-box:focus-within {
+    border-color: rgba(53, 208, 127, 0.7);
+    box-shadow:
+        0 0 0 4px rgba(53, 208, 127, 0.08),
+        0 16px 45px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+    flex: 0 0 21px;
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: #8190a5;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+}
+
+#searchInput {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 0;
+    color: var(--text);
+    font: inherit;
+    font-size: 15px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+}
+
+#searchInput::placeholder {
+    color: #74839a;
+}
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 48px;
+    padding: 0 22px;
+    color: #062013;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: var(--green);
+    border: 0;
+    border-radius: 10px;
+    transition: background 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+    background: var(--green-hover);
+    transform: translateY(-1px);
+}
+
+button:focus-visible,
+select:focus-visible,
+#searchInput:focus-visible {
+    outline: 2px solid var(--green);
+    outline-offset: 3px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px auto 0;
+}
+
+.select-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+select {
+    min-width: 175px;
+    appearance: none;
+    padding: 12px 40px 12px 15px;
+    color: #cbd5e1;
+    font: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    background: rgba(17, 26, 44, 0.8);
+    border: 1px solid #27364b;
+    border-radius: 10px;
+}
+
+select:hover {
+    border-color: #3a4e68;
+}
+
+select option {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.select-chevron {
+    position: absolute;
+    right: 14px;
+    top: 8px;
+    color: #8797ad;
+    font-size: 19px;
+    pointer-events: none;
+}
+
+#results {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 850px);
+    margin: 48px auto 0;
+    color: #cbd5e1;
+}
+
+#results > p {
+    text-align: center;
+    color: var(--muted);
+}
+
+.repo-card {
+    margin-bottom: 16px;
+    padding: 23px;
+    background: rgba(17, 26, 44, 0.92);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+.repo-card:hover {
+    background: var(--surface-hover);
+    border-color: #3a536c;
+    transform: translateY(-2px);
+}
+
+.repo-card h2 {
+    margin: 0 0 12px;
+    color: var(--green);
+    font-size: 21px;
+    overflow-wrap: anywhere;
+}
+
+.repo-card p {
+    margin: 9px 0;
+    color: #b0bdce;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+}
+
+.repo-card details {
+    margin-top: 17px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.repo-card summary {
+    color: #e2e8f0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.repo-card a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--green);
+    text-decoration: none;
+}
+
+.repo-card a:hover {
+    text-decoration: underline;
+}
+
+.ambient {
+    position: absolute;
+    z-index: 0;
+    width: 260px;
+    height: 260px;
+    border: 1px solid rgba(53, 208, 127, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.ambient::before,
+.ambient::after {
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(53, 208, 127, 0.055);
+    border-radius: 50%;
+}
+
+.ambient::before {
+    inset: 24px;
+}
+
+.ambient::after {
+    inset: 52px;
+}
+
+.ambient-one {
+    top: 145px;
+    left: -185px;
+}
+
+.ambient-two {
+    top: 270px;
+    right: -200px;
+    width: 310px;
+    height: 310px;
+}
+
+.bottom-decoration {
+    position: absolute;
+    z-index: 1;
+    bottom: 34px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    opacity: 0.48;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background: var(--green);
+    border-radius: 50%;
+}
+
+.decor-line {
+    width: 72px;
+    height: 1px;
+    margin: 0 8px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #2d6d58,
+        transparent
+    );
+}
+
+.decor-chip {
+    width: 25px;
+    height: 9px;
+    border: 1px solid #285342;
+    border-radius: 4px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 56px 17px 100px;
+    }
+
+    .github-mark {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 22px;
+        border-radius: 16px;
+    }
+
+    .eyebrow {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    h1 {
+        letter-spacing: -1.2px;
+    }
+
+    .subtitle {
+        margin: 17px auto 27px;
+        font-size: 14px;
+    }
+
+    .search-box {
+        gap: 9px;
+        min-height: 61px;
+        padding: 7px 7px 7px 13px;
+        border-radius: 13px;
+    }
+
+    #searchInput {
+        font-size: 14px;
+    }
+
+    button {
+        gap: 7px;
+        min-height: 44px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+    .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .select-wrap,
+    select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    select {
+        padding: 12px 30px 12px 10px;
+        font-size: 12px;
+    }
+
+    .select-chevron {
+        right: 9px;
+    }
+
+    #results {
+        margin-top: 35px;
+    }
+
+    .repo-card {
+        padding: 18px;
+    }
+
+    .ambient-one {
+        left: -220px;
+    }
+
+    .ambient-two {
+        right: -250px;
+    }
+}
+
+@media (max-width: 360px) {
+    .search-icon {
+        display: none;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+}
